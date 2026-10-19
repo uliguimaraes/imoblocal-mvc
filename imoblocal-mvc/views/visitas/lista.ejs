@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agenda de visitas - ImóbLocal</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Agenda de visitas</h1>
+
+    <table>
+      <thead>
+        <tr><th>Imóvel</th><th>Corretor</th><th>Início</th><th>Fim</th></tr>
+      </thead>
+      <tbody>
+        <% visitas.forEach(v => { %>
+          <tr>
+            <td><%= v.imovelId %></td>
+            <td><%= v.corretor %></td>
+            <td><%= v.inicio.toLocaleString('pt-BR') %></td>
+            <td><%= v.fim.toLocaleString('pt-BR') %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+
+    <p><a href="/visitas/nova">Agendar nova visita</a></p>
+  </main>
+</body>
+</html>
